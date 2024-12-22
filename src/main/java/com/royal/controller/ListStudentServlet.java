@@ -19,35 +19,15 @@ public class ListStudentServlet extends HttpServlet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
+
 		
 		StudentDao dao = new StudentDao();
 		
 		ArrayList<StudentBean> list = dao.getAllRecords();
 		
-		out.print("<h3>Student List Page</h3>");
+		request.setAttribute("list", list);
 		
-		out.print("<table border='1'>              ");
-		out.print("	<tr>                ");
-		out.print("		<td>Rno</td>    ");
-		out.print("		<td>Name</td>   ");
-		out.print("		<td>Std</td>    ");
-		out.print("		<td>Marks</td>  ");
-		out.print("		<td>Action</td>  ");
-		out.print("</tr>");
-
-		for (int i = 0; i < list.size(); i++) 
-		{
-			StudentBean s = list.get(i);
-			out.print("	<tr>                ");
-			out.print("		<td>"+s.getRno()+"</td>    ");
-			out.print("		<td>"+s.getName()+"</td>   ");
-			out.print("		<td>"+s.getStd()+"</td>    ");
-			out.print("		<td>"+s.getMarks()+"</td>  ");
-			out.print("		<td><a href='EditStudentServlet?rno="+s.getRno()+"'>EDIT</a> | <a href='DeleteStudentServlet?rno="+s.getRno()+"'>DELETE</a></td>  ");
-			out.print("</tr>");
-		}
-		out.print("</table>");
+		request.getRequestDispatcher("liststudent.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{

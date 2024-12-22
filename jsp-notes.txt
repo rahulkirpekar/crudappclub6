@@ -1,0 +1,68 @@
+Servlet---100% Java code
+
+JSP--Java Server Pages
+
+	Jsp = HTMl(90%) + Java Code(10%)
+
+	html files---html code----->java code
+
+
+jsp---->servlet
+
+login.jsp--->[login_jsp.java]--->[login_jsp.class]---run
+
+
+class login_jsp extends HttpJspBase
+{
+	void test1()
+	{
+	
+	}	
+	service()
+	{
+		for(int i = 1 ; i <= 10; i++)
+		{
+			out.print("I : " + i + "<br>");
+		}
+		out.print("Hello World");
+	}
+}
+
+JSP---Scripting Elements:-
+-------------------------
+
+1) Scriptlet
+	<%
+		for(int i = 1 ; i <= 10; i++)
+		{
+			out.print("I : " + i + "<br>");
+		}
+	%>	
+
+2) expression
+
+	<%="Hello World"%>
+
+3) declaration
+
+	<%!
+		void test1()
+		{
+	
+		}
+	%>
+
+
+	<%@
+
+
+	%>
+
+
+
+
+
+
+
+
+
