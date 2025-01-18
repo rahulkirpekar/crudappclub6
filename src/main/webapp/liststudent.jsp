@@ -18,6 +18,7 @@
 				<td>Name</td>   
 				<td>Std</td>    
 				<td>Marks</td>  
+<!-- 				<td>Profile Pic</td>   -->
 				<td>Action</td>  
 		</tr>
 
@@ -31,7 +32,8 @@
 				<td><%=s.getName() %></td>   
 				<td><%=s.getStd() %></td>    
 				<td><%=s.getMarks() %></td>  
-				<td><a href='EditStudentServlet?rno="+s.getRno()+"'>EDIT</a> | <a href='DeleteStudentServlet?rno="+s.getRno()+"'>DELETE</a></td>  
+<!-- 				<td><IMG alt="Profile Pic" src="resource/watch.jpeg" width="20%" height="20%" /> </td>   -->
+				<td><a href='EditStudentServlet?rno=<%=s.getRno()%>'>EDIT</a> | <a href='DeleteStudentServlet?rno=<%=s.getRno()%>'>DELETE</a></td>  
 		</tr>
 <%} %>		
    </table>
