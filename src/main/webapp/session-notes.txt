@@ -1,0 +1,95 @@
+Session Tracking:-
+------------------
+	HTTP---stateless Protocol(Rule)
+
+			 session
+			   |
+			Duration
+			   |
+			   |Data Share---[login--user]
+			   |
+			   |[WebContainer/ServletContainer]--server
+			   |
+			   |session(11)-User-1--object---destroy
+			   |session(22)-User-2--object
+	-------------------------------------------------
+	|	   jsp pages,servlets			|
+      login<----------------------------------------->logout
+      user1(session--11)			     user1(session(11))	
+      user2(session--22)			     user2	
+
+
+
+Real-Time Uses of Sessions in Servlets
+
+1) User Authentication and Authorization:
+***************************************
+After a user logs into an application, their authentication status and user details (like username, roles, or permissions) can be stored in a session. For subsequent requests, this session data ensures that the user doesn't need to log in again.
+Example: Online banking or e-commerce websites maintain a user's session to provide a personalized experience without requiring them to log in repeatedly.
+
+
+2) Shopping Cart Functionality:
+******************************
+In e-commerce platforms, sessions store the products a user has added to their cart, even if they navigate between pages or leave and return within a certain time frame.
+Example: Amazon or Flipkart uses sessions to store cart items until checkout.
+
+
+3) Personalized User Experience:
+*************************************
+Websites often use sessions to store preferences like language settings, themes, or location, tailoring the experience for the user.
+Example: News websites might remember a user's preferred region or category of news.
+
+
+
+Way to do Type of Session Tracking:-
+-------------------------------------
+
+1) HttpSession(Most Recomended way to manage session)
+-------------------------------------------------------
+
+	loginServlet					logoutServlet
+
+HttpSession session = request.getSession();		HttpSession session = request.getSession(false);		
+
+								if(session != null)
+//HttpSession session = request.getSession(true);		{
+									session.invalidate();
+//HttpSession session = request.getSession(false);		}
+								response.sendRedirect(home.jsp);
+									   
+								
+
+
+2) Cookkie
+
+
+3) Hidden form field
+4) Query String
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

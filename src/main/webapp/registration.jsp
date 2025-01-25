@@ -5,7 +5,10 @@
 <title>Student Registration</title>
 </head>
 <body>
+	<h2>Welcome,</h2>${userName}
+
 	<h3>Student Registration Page</h3>
+	
 	<form action="InsertStudentServlet" method="post">
 		<table>
 			<tr>
@@ -33,6 +36,24 @@
 			</tr>
 		</table>
 	</form>
-
+	
 </body>
 </html>
+
+
+<!-- Type Validation -->
+<!-- ------------------- -->
+<!-- 1) Fronted--Javascript---form--functlion---validate -->
+<!-- 2) Backend----Servlet--Technology -->
+<!-- ----------------------------------------------------------- -->
+
+<!-- EL ---Expression Language -->
+
+<!-- scope---to fetch data from scope -->
+
+<!-- 	1) request -->
+<!-- 	2) session -->
+<!-- 	3) application(ServletContext) -->
+
+
+<%-- 	${nameErr} --%>
