@@ -79,4 +79,52 @@
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/logoutServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CookieServlet</display-name>
+    <servlet-name>CookieServlet</servlet-name>
+    <servlet-class>com.royal.controller.CookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieServlet</servlet-name>
+    <url-pattern>/CookieServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RetriveCookieServlet</display-name>
+    <servlet-name>RetriveCookieServlet</servlet-name>
+    <servlet-class>com.royal.controller.RetriveCookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RetriveCookieServlet</servlet-name>
+    <url-pattern>/RetriveCookieServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteCookieByServlet</display-name>
+    <servlet-name>DeleteCookieByServlet</servlet-name>
+    <servlet-class>com.royal.controller.DeleteCookieByServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteCookieByServlet</servlet-name>
+    <url-pattern>/DeleteCookieByServlet</url-pattern>
+  </servlet-mapping>
+  <listener>
+    <listener-class>com.royal.listener.TestServletRequestListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.royal.listener.TestServletRequestAttributeListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.royal.listener.TestServletSessionListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.royal.listener.TestServletSessionAttributeListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.royal.listener.TestServletContextListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.royal.listener.TestServletContextAttributeListener</listener-class>
+  </listener>
 </web-app>

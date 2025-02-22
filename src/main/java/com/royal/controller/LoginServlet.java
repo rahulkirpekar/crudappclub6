@@ -2,6 +2,9 @@ package com.royal.controller;
 
 import java.io.IOException;
 
+import com.royal.bean.UserBean;
+import com.royal.dao.UserDao;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -20,21 +23,39 @@ public class LoginServlet extends HttpServlet
 		RequestDispatcher rd = null;
 		if (userName!=null  && password != null) 
 		{
-			if ("admin".equals(userName.trim()) && ("admin".equals(password.trim()))) 
+			
+			UserDao userDao = new UserDao();
+			
+			UserBean userBean = userDao.getUserByEmailId(userName,password);
+
+			if (userBean!=null) 
 			{
 				HttpSession session = request.getSession();
 				session.setAttribute("userName", userName);
 				rd = request.getRequestDispatcher("registration.jsp");
-			} else 
-			{
+				
+			} else {
 				request.setAttribute("loginError", "<font color='red'>Invalid UserName and Password</font>");
 				rd = request.getRequestDispatcher("login.jsp");
 			}
-		} else 
-		{
-			rd = request.getRequestDispatcher("login.jsp");
-			request.setAttribute("loginError", "<font color='red'>Invalid UserName and Password</font>");
-		}
+			
+			rd.forward(request, response);
+			
+//			if ("admin".equals(userName.trim()) && ("admin".equals(password.trim()))) 
+//			{
+//				HttpSession session = request.getSession();
+//				session.setAttribute("userName", userName);
+//				rd = request.getRequestDispatcher("registration.jsp");
+//			} else 
+//			{
+//				request.setAttribute("loginError", "<font color='red'>Invalid UserName and Password</font>");
+//				rd = request.getRequestDispatcher("login.jsp");
+//			}
+//		} else 
+//		{
+//			rd = request.getRequestDispatcher("login.jsp");
+//			request.setAttribute("loginError", "<font color='red'>Invalid UserName and Password</font>");
+//		}
 		rd.forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 

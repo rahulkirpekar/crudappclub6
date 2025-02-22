@@ -1,0 +1,27 @@
+4- ways to Track session:-
+---------------------------
+1) HttpSession
+
+	session---j_SessionId--Cookie---Web Container
+
+2) Cookie
+	login peice of information	
+	string data==---store--client---browser	
+
+	key,value(data)
+	----------------
+	browser	
+
+3) Hidden form field
+
+	Edit
+	  |
+	  EditStudentServlet
+		|
+		editStudent.jsp
+		   |
+		id/rno--hidden
+		   |
+		  submit---UpdateStudentServlet			
+
+4) query string--[ListStudentServlet--->liststudent.jsp-->delete|edit]
