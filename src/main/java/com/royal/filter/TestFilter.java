@@ -12,15 +12,10 @@ import jakarta.servlet.http.HttpFilter;
 /**
  * 
  * Filter:-
--------
-
+-----------
  user---request----->webserver---webcontainer(servlet/jsp/resource)
 
 	A filter in a servlet is used to preprocess and post-process requests before they reach the servlet or after the servlet generates a response. It is primarily used for logging, authentication, authorization, input validation, compression, etc.
-
-
- * 
- * 
  */
 public class TestFilter extends HttpFilter implements Filter {
        
