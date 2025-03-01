@@ -19,6 +19,7 @@
     <h3>Student List Page</h3>
 
     <%
+    	
         ArrayList<StudentBean> list = (ArrayList<StudentBean>) request.getAttribute("list");
     %>
     <table border='1'>
